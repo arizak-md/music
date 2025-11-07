@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIZAK Media Hub</title>
+
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+      color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+      text-transform: uppercase;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .search-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .search-box h2 {
+      margin-bottom: 15px;
+      font-weight: 500;
+      color: #1db954;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      background: linear-gradient(45deg, #1db954, #1ed760);
+      border: none;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-left: 8px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #1ed760;
+    }
+
+    .results {
+      margin-top: 30px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .result-card {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .result-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .result-card img {
+      width: 120px;
+      border-radius: 8px;
+    }
+
+    .result-info {
+      flex: 1;
+    }
+
+    .result-info h4 {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+
+    .result-info p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    video#bgVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="bgVideo" autoplay loop muted>
+    <source src="https://github.com/ELIJAH-Ombogo/elijah/raw/main/VID-20250923-WA0034.mp4" type="video/mp4">
+  </video>
+
+  <header>ARIZAK MEDIA HUB 🎵</header>
+
+  <main>
+    <div class="search-box">
+      <h2>Find & Download Your Favorite Media</h2>
+      <input type="text" id="searchInput" placeholder="Type YouTube title or keyword..." />
+      <button onclick="searchVideo()">Search</button>
+
+      <div id="results" class="results"></div>
+    </div>
+  </main>
+
+  <footer>© 2025 ARIZAK TECH | All Rights Reserved</footer>
+
+  <script src="app.js"></script>
+</body>
+  </html>
